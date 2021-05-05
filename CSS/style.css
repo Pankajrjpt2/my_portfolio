@@ -1,6 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  font-family:Raleway, sans-serif;
   /* font-family: Raleway,sans-serif; */
 }
 body {
@@ -9,6 +19,11 @@ body {
 }
 main {
   display: block;
+}
+a{
+  text-decoration: none;
+  font-weight: 400;
+  
 }
 
 .hero {
@@ -125,7 +140,8 @@ span {
   /* background-color: #a06e7c; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/Images/service_background_2.jpg);
-  height: 35rem;
+  background-size: cover;
+  min-height: 35rem;
   z-index: -1;
 }
 .intro__desc__content {
@@ -134,11 +150,12 @@ span {
   margin-top: 6rem;
   position: absolute;
   max-width: 35%;
+  padding-bottom: 17rem;
 }
 
 .intro__welcome {
   font-family: "Raleway", sans-serif;
-  font-weight: 100;
+  font-weight: 600;
   line-height: 3;
 
   font-size: 1.6rem;
@@ -155,16 +172,18 @@ span {
   justify-content: center;
   flex-direction: row;
   margin-bottom: 3rem;
+  padding: 4rem;
 }
 
 .service__container {
   z-index: 1;
+  margin: 0 auto;
   margin-top: -15rem;
   overflow: hidden;
   max-width: 85.256rem;
   background-color: white;
   border-radius: 2rem;
-  /* box-shadow: .2rem .3rem .4rem  .3rem gray; */
+  box-shadow: -2px 8px 9px -6px hsl(0deg 0% 69% / 63%);
 }
 
 .service__container-content {
@@ -208,4 +227,188 @@ span {
 
 .service__img {
   width: 9%;
+}
+
+
+/* <------------------------project section start---------------------> */
+
+.project {
+  padding: 3rem 0;
+}
+.all-items {
+  background-color: white;
+  margin-top: -8rem;
+  padding: 2rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+.item:nth-child(even){
+  flex-direction: row-reverse;
+}
+.item:nth-child(even) .right{
+  margin-left: 0;
+}
+
+.item:nth-child(even) .left{
+  margin-left:-9.375rem ;
+}
+
+.item .left{
+  flex: 1;
+}
+.item .right{
+  flex: 1;
+  margin-left: -9.375rem;
+  background-color: white;
+  padding: 2rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1.2rem #00000028;
+  z-index: 2;
+}
+
+.item .left .project__img{
+  height: 28.25rem;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  box-shadow: 0 0 1.2rem #4705fc33;
+  position: relative;
+  
+  
+}
+.item .left .project__img::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.2);
+}
+.item .left .project__img img{
+  object-fit: cover;
+  transition: 0.3s ease transform;
+  height: 100%;
+  
+}
+
+.item:hover .left .project__img img{
+  transform: scale(1.1);
+  z-index: 1;
+  
+}
+
+.item .right .project__title{
+  font-size: 1.6rem;
+  font-weight: 600;
+  word-break: break-word;
+  
+}
+
+.item .right .project__desc{
+  color: #777;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  padding-bottom: 1.5rem;
+}
+.project__button{
+  display: flex;
+  align-items: center;
+}
+.know__more-btn{
+  padding: 0.8rem 1.8rem;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+.primary-btn-outline{
+  padding: 0.7rem 1.8rem;
+  color: #c00c40;
+  font-size: 1.1rem;
+  
+  border: 2px solid #c00c40;
+  border-radius: 2rem;
+}
+
+@media screen and (max-width:768px){
+  .item{
+    flex-direction: column;
+  }
+
+  .item .left{
+    width: 100%;
+  }
+
+  .item .right{
+    width: 75%;
+    margin-left: 0;
+    margin-top: -9.375rem;
+  }
+
+  .item:nth-child(even){
+    flex-direction: column;
+  }
+
+  .item:nth-child(even) .left{
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width:450px){
+  .item .right .project__button{
+    flex-direction: column;
+  }
+  .item .right .project__button a{
+    width: 100%;
+    text-align: center;
+  }
+  .item .right .project__button .know__more-btn{
+    margin-bottom:0.5rem ;
+  }
+}
+/* <-------------------project section end-------------------->  */
+
+
+
+@media screen and (max-width: 750px) {
+  .service__blocks {
+    width: 100%;
+  }
+  .intro__desc__content {
+    max-width: 90%;
+  }
+  .hero__wrapper {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .intro__desc__content {
+    max-width: 90%;
+  }
+  .intro__welcome {
+    font-size: 1.1rem;
+  }
+  .intro__content {
+    font-size: 0.8rem;
+  }
+  .service {
+    padding: 1rem;
+  }
+
+  .service__img {
+    width: 14%;
+  }
+  .intro__desc {
+    min-height: 20rem;
+  }
+  .service__container {
+    margin-top: -5rem;
+  }
 }
